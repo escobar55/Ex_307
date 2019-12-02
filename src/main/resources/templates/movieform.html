@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+ <h1>Movie Form</h1>
+ <form action="#" th:action="@{/processMovie}" th:object="${movie}" method="post">
+     <input type="hidden" th:field="*{id}" />
+
+     Title: <input type="text" th:field="*{title} " />
+     <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span><br/>
+     Year: <input type="text" th:field="*{year}" />
+     <span th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></span><br/>
+     Description: <textarea rows="3" th:field="*{description}" />
+     <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span><br/>
+     ///add select option and allow the user to select a director before feeling in the movie info
+     //also... th:value will be  th:value="${director.id}"
+     <br/>
+     <input type="submit" value="Submit" />
+
+ </form>
+
+</body>
+</html>
