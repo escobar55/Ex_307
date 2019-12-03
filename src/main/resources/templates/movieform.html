@@ -15,8 +15,14 @@
      <span th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></span><br/>
      Description: <textarea rows="3" th:field="*{description}" />
      <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span><br/>
-     ///add select option and allow the user to select a director before feeling in the movie info
-     //also... th:value will be  th:value="${director.id}"
+
+     <!--Add the select option -->
+     <select th:field="*{director}">
+         <option th:each="director : ${directors}" th:value="${director.id}" th:text="${director.name}"></option>
+     </select>
+
+     <!--add select option and allow the user to select a director before feeling in the movie info
+     //also... th:value will be  th:value="${director.id}" -->
      <br/>
      <input type="submit" value="Submit" />
 

@@ -49,6 +49,7 @@ public class HomeController {
     @GetMapping("/addMovie")
     public String movieForm(Model model){
         model.addAttribute("movie", new Movie());
+        model.addAttribute("directors", directorRepository.findAll());
         return "movieform";
     }
 
