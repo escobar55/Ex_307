@@ -16,8 +16,8 @@
      Description: <textarea rows="3" th:field="*{description}" />
      <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span><br/>
 
-     <!--Add the select option -->
-     <select th:field="*{director}">
+     <!--Add the select option **   <select th:field="*{director}"> ** -->
+     <select id="directorid" name="directorid">
          <option th:each="director : ${directors}" th:value="${director.id}" th:text="${director.name}"></option>
      </select>
 
